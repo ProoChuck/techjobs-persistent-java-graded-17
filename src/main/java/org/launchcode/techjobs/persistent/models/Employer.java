@@ -1,12 +1,12 @@
 package org.launchcode.techjobs.persistent.models;
 
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 @Entity
 public class Employer extends AbstractEntity {
     @Size(min = 1, max = 52, message = "Name must be between 1 and 52 characters")
-    @NotNull(message = "Name cannot be empty")
+    @NotBlank(message = "Name cannot be empty")
     private String location;
 
     public String getLocation() {

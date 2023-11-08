@@ -4,7 +4,7 @@ package org.launchcode.techjobs.persistent.models;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
@@ -14,7 +14,7 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
     @Size(min = 1, max = 52, message = "Name must be between 1 and 52 characters")
-    @NotNull(message = "Name cannot be empty")
+    @NotBlank(message = "Name cannot be empty")
     private String name;
 
     public int getId() {
