@@ -20,9 +20,9 @@ public class EmployerController {
     @RequestMapping("/")
     public String index(Model model) {
         // Retrieve all employers from the repository
-        model.addAttribute("index",employerRepository.findAll());
+        model.addAttribute("employer",employerRepository.findAll());
         // Return the view name for the employers page
-        return "employers";
+        return "employers/index";
     }
 
     @GetMapping("add")

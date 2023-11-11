@@ -20,14 +20,14 @@ public class SkillController {
     @RequestMapping("/")
     public String index(Model model) {
         // Retrieve all skills from the repository
-        model.addAttribute("index",skillRepository.findAll());
+        model.addAttribute("skill", skillRepository.findAll());
         // Return the view name for the skills page
-        return "skills";
+        return "skills/index";
     }
 
     @GetMapping("add")
     public String displayAddSkillForm(Model model) {
-        model.addAttribute(new Skill());
+        model.addAttribute("skill", new Skill());
         return "skills/add";
     }
 
